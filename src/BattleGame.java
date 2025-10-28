@@ -295,6 +295,13 @@ public class BattleGame extends JFrame {
                 });
             }
         });
+        homeBtn.addActionListener(e -> {
+            dispose(); // Close
+            SwingUtilities.invokeLater(() -> {
+                BattleGame newGame = new BattleGame();
+                newGame.setVisible(true); // Start
+            });
+        });
 
         skillBtn.addActionListener(e -> playerUseskill());
 
